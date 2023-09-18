@@ -7,16 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   container.scrollTop = container.scrollHeight
 })
 
-const resultCalculator = {
-  type: 'calc',
-  numOne: 0,
-  operation: {
-    type: '',
-    value: '',
-  },
-  numTwo: '',
-  result: '',
-}
+//-------------------------------------------------------------
 
 const calculator = new Calculator()
 const numOne = document.querySelector('.num-one')
@@ -26,43 +17,101 @@ const igualTo = document.querySelector('.igual-to')
 const result = document.querySelector('.result')
 
 // Reiniciamos los valores de la calculadora
-numOne.innerHTML = resultCalculator.numOne
-numTwo.innerHTML = resultCalculator.numTwo
-operationSigno.innerHTML = resultCalculator.operation.value
-result.innerHTML = resultCalculator.result
+numOne.innerHTML = 0
+numTwo.innerHTML = calculator.numTwo
+operationSigno.innerHTML = calculator.operation
+result.innerHTML = ''
 igualTo.innerHTML = ''
 
-// Totammos los botones.
+// Todo: Totammos los botones Numericos
 const buttonNumber = document.querySelectorAll('.action-button.number')
 
 buttonNumber.forEach((button) => {
   button.addEventListener('click', (event) => {
     event.preventDefault()
-    switch (calculator.numOne) {
-      case 0:
-        if (resultCalculator.numOne !== 0) {
-          numOne.innerHTML += Number(button.value)
-          resultCalculator.numOne += Number(button.value)
+    switch (calculator.operation) {
+      case '':
+        if (calculator.numOne !== '') {
+          numOne.innerHTML += button.value
+          calculator.putNumOne(button.value)
         } else {
-          numOne.innerHTML = Number(button.value)
-          resultCalculator.numOne = Number(button.value)
+          numOne.innerHTML = button.value
+          calculator.putNumOne(button.value)
         }
         break
       default:
-        if (resultCalculator.numTwo !== 0) {
-          numTwo.innerHTML += Number(button.value)
-          resultCalculator.numTwo += Number(button.value)
+        if (calculator.numTwo !== 0) {
+          numTwo.innerHTML += button.value
+          calculator.putNumTwo(button.value)
         } else {
-          numTwo.innerHTML = Number(button.value)
-          resultCalculator.numTwo = Number(button.value)
+          numTwo.innerHTML = button.value
+          calculator.putNumTwo(button.value)
         }
         break
     }
+
+    // console.log(calculator)
+    // console.log(button.value)
+    // console.log(calculator.numOne, calculator.numTwo)
   })
 })
 
+// todo: Tomamos los Botones de Operaciones.
 const buttonOperation = document.querySelectorAll('.action-button.operation')
-buttonOperation.forEach((button) => {})
+buttonOperation.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault()
+    switch (button.value) {
+      case 'add':
+        operationSigno.innerHTML = '+'
+        calculator.operation = button.value
+        break
+      case 'subtract':
+        operationSigno.innerHTML = '-'
+        calculator.operation = button.value
+        break
+      case 'multiply':
+        operationSigno.innerHTML = 'x'
+        calculator.operation = button.value
+        break
+      case 'divide':
+        operationSigno.innerHTML = '÷'
+        calculator.putNumOne(calculator.numOne)
+        calculator.operation = button.value
+        break
+      case 'porcent':
+        if (calculator.numOne === 0) {
+          calculator.numOne = calculator.numOne / 100
+          numOne.innerHTML = calculator.numOne
+        } else {
+          calculator.numTwo = calculator.numTwo / 100
+          numTwo.innerHTML = calculator.numTwo
+        }
+      default:
+    }
 
+    // console.log(calculator)
+    // console.log(button.value)
+    // console.log(calculator.operation)
+  })
+})
+
+// Todo: Totamos los Botones de Equal
 const buttonEqual = document.querySelector('.action-button.equal')
-const buttonAction = document.querySelectorAll('.action-button.action')
+buttonEqual.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  if (calculator.numOne !== '' && calculator.numTwo !== '') {
+    igualTo.innerHTML = '='
+    result.innerHTML = calculator.getResult()
+  }
+})
+
+// Todo: Tomamos los Botones Accion
+const buttonAction = document.querySelector('.action-button.clear')
+buttonAction.addEventListener('click', (event) => {
+  event.preventDefault()
+
+  calculator.clear()
+  location.reload()
+})
