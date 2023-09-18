@@ -1,0 +1,15 @@
+{
+  "author": "TheGroobArt",
+  "description": "Desarrollo de una app donde se pueda logear para guardar el historico de sus calculos. Si no esta logeado puede que no guarde el historico de sus interectividad.",
+  "devDependencies": {
+    "sass": "^1.67.0"
+  },
+  "license": "ISC",
+  "main": "index.html",
+  "name": "calculadora",
+  "scripts": {
+    "sass:watch": "sass --watch ./scss/styles.scss ./public/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0"
+}
