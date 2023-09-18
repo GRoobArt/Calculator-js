@@ -1,5 +1,189 @@
+.forms-calculators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.forms-calculators .action-button[value="0"] {
+  grid-column: 1/3;
+  aspect-ratio: auto;
+}
+
+.dashboard {
+  border: 2px solid #d6d6d6;
+  border-radius: 1.2rem;
+  max-width: 1024px;
+  width: 100%;
+  height: fit-content;
+  background-color: #1f1f1f;
+}
+.dashboard .header-content {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dashboard .header-content .title {
+  margin: 0;
+}
+.dashboard .main-content {
+  padding: 0;
+  border-radius: 1.2rem;
+  border: 1px solid #d6d6d6;
+  border-bottom: none;
+  display: flex;
+}
+.dashboard .main-content .historie-content {
+  min-width: 320px;
+  flex: 1 1 60%;
+  padding: 1rem;
+  border-right: 1px solid #d6d6d6;
+}
+.dashboard .main-content .historie-content .title {
+  margin: 0;
+  padding-bottom: 1rem;
+}
+.dashboard .main-content .forms-operation {
+  flex: 1 1 35%;
+  padding: 1rem;
+}
+.dashboard .main-content .action-changet {
+  flex: 1 1 5%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  align-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .dashboard .main-content {
+    flex-direction: column;
+  }
+  .dashboard .main-content .historie-content {
+    border-right: none;
+    border-bottom: 1px solid #d6d6d6;
+  }
+  .dashboard .main-content .historie-content .history.code {
+    max-height: 100px;
+    min-height: 50px;
+    overflow-y: scroll;
+    padding-right: 0.75rem;
+  }
+  .dashboard .main-content .action-changet {
+    flex-direction: row;
+  }
+}
+.historie-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.historie-content .history.code {
+  padding: 0;
+  margin: 0;
+  align-self: flex-end;
+  text-align: right;
+  list-style: none;
+}
+.historie-content .history.code .item {
+  margin: 0;
+  padding: 0.5rem 0;
+  color: #555555;
+  display: flex;
+  flex-direction: column;
+}
+.historie-content .history.code .item.old {
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.historie-content .history.code .item .typo {
+  font-size: 0.6rem;
+  margin: 0;
+}
+.historie-content .history.code .item .operation {
+  margin: 0;
+}
+.historie-content .history.code .item:last-child {
+  padding-bottom: 0;
+  color: #2775ff;
+  font-size: 1.25rem;
+}
+
 body {
-  color: red;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body.content-app {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+body .code {
+  font-family: "Fira Code", monospace;
+}
+
+button,
+input,
+select {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 125%;
+}
+
+button.action-button {
+  padding: 0.6rem 1.2rem;
+  aspect-ratio: 1/1;
+  margin: 0;
+  min-width: 65px;
+  border: 0;
+}
+button.action-button.primary {
+  background-color: #555555;
+  color: #eaeaea;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: 1px solid #a6a6a6;
+  appearance: none;
+}
+button.action-button.primary.xs {
+  padding: 0.2rem 0.4rem;
+  border-radius: 50%;
+  min-width: 40px;
+}
+button.action-button.primary:not(:disabled):hover {
+  background-color: #707070;
+}
+button.action-button.primary:not(:disabled):active, button.action-button.primary:not(:disabled).select {
+  background-color: #003ea6;
+}
+button.action-button.primary:disabled {
+  background-color: #1f1f1f;
+  color: #8b8b8b;
+}
+button.action-button.secondary {
+  border-radius: 50%;
+  background-color: #0552dc;
+  color: #eaeaea;
+}
+button.action-button.secondary.xs {
+  padding: 0.2rem 0.4rem;
+  min-width: 40px;
+}
+button.action-button.secondary:not(:disabled):hover {
+  background-color: #707070;
+}
+button.action-button.secondary:not(:disabled):active, button.action-button.secondary:not(:disabled).select {
+  background-color: #1f1f1f;
+}
+
+.theme-dark {
+  background-color: #101010;
+  color: #d6d6d6;
 }
 
 /*# sourceMappingURL=styles.css.map */

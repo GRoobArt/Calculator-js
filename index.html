@@ -17,11 +17,85 @@
     <script rel="preconnect" src="https://kit.fontawesome.com/3a008ef3f0.js" crossorigin="anonymous"></script>
 
     <!--*Scripts-->
-    <script rel="preconnect" type="module" src=""></script>
+    <script rel="preconnect" type="module" src="./scripts/main.js"></script>
+
+    <!--*Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- *Library-->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
-<body>
-
+<body class="theme-dark content-app">
+    <div class="dashboard">
+        <header class="header-content">
+            <h1 class="title">
+                <i class="fa-solid fa-calculator"></i>
+                Calculator
+            </h1>
+            <button class="action-button secondary xs login-content">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </header>
+        <main class="main-content">
+            <section class="historie-content">
+                <h2 class="title">Historial</h2>
+                <ul class="history code">
+                    <li class="item">
+                        <p class="typo">CALC:</p>
+                        <p class="operation">
+                            <span class="num-one">0</span>
+                            <span class="operation-signo">+</span>
+                            <span class="num-two">1</span>
+                            <span class="igual-to">=</span>
+                            <span class="result">1</span>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section class="forms-operation">
+                <article class="forms-calculators">
+                    <button type="button" class="action-button primary action" value="ac">Ac</button>
+                    <button type="button" class="action-button primary action" value="c">c</button>
+                    <button type="button" class="action-button primary operation" value="porcent">%</button>
+                    <button type="button" class="action-button primary operation" value="split">÷</button>
+                    <button type="button" class="action-button primary number" value="7">7</button>
+                    <button type="button" class="action-button primary number" value="8">8</button>
+                    <button type="button" class="action-button primary number" value="9">9</button>
+                    <button type="button" class="action-button primary operation" value="multiply">x</button>
+                    <button type="button" class="action-button primary number" value="4">4</button>
+                    <button type="button" class="action-button primary number" value="5">5</button>
+                    <button type="button" class="action-button primary number" value="6">6</button>
+                    <button type="button" class="action-button primary operation" value="add">+</button>
+                    <button type="button" class="action-button primary number" value="1">1</button>
+                    <button type="button" class="action-button primary number" value="2">2</button>
+                    <button type="button" class="action-button primary number" value="3">3</button>
+                    <button type="button" class="action-button primary operation" value="subtract">-</button>
+                    <button type="button" class="action-button primary number" value="0">0</button>
+                    <button type="button" class="action-button primary number" value=".">.</button>
+                    <button type="submit" class="action-button primary equal">=</button>
+                </article>
+            </section>
+            <section class="action-changet">
+                <button type="button" class="action-button primary select" value="calculator">
+                    <i class="fa-solid fa-calculator"></i>
+                </button>
+                <button type="button" class="action-button primary" value="iva" disabled>
+                    IVA
+                </button>
+                <button type="button" class="action-button primary" value="Honoratios" disabled>
+                    Hon
+                </button>
+                <button type="button" class="action-button primary" value="ipc" disabled>
+                    IPC
+                </button>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>

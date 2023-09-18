@@ -1,3 +1,5 @@
-body {
-  color: red;
-}
+@import './lib.scss';
+@import './variables.scss';
+@import './layout.scss';
+@import './components.scss';
+@import './theme.dark.scss';

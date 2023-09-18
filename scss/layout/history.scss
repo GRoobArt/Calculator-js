@@ -1,0 +1,41 @@
+.historie-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .history.code {
+    padding: 0;
+    margin: 0;
+    align-self: flex-end;
+    text-align: right;
+    list-style: none;
+    .item {
+      margin: 0;
+      padding: 0.5rem 0;
+      color: $color-gray-700;
+      display: flex;
+      flex-direction: column;
+
+      &.old {
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .typo {
+        font-size: 0.6rem;
+        margin: 0;
+      }
+
+      .operation {
+        margin: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+        color: $color-blue-500;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

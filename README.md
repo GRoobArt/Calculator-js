@@ -37,3 +37,5 @@ De igual manera dejare mi linkedin, link de Github y el antiguo proyecto para cu
 Mis razones son que me desarrolle como frontend en mi trabajo, tengo algunos conocimientos algo pasados ya que me toco afrontar esto el puesto de frontend de frente. y por lo menos hay cosas que nunca eh tomado como **Costructores**, **Fetch**, **Asincronia & Promesas**, **Local Store** entre otras cosas.
 
 Siempre intento no molestar ni preguntar ya que mis dudas las voy sacando despues con GPT porque no quiero molestar a mis compañeros que estan apenas aprendiendo y si en alguna oportunidad eh podido ayudarlos.
+
+De igual manera en los dos proyectos intento siempre trabajarlo desde github donde para que se tenga un historial de commits.
