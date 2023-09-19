@@ -18,9 +18,9 @@ Si no esta logeado puede que no guarde el historico de sus interectividad.
 
 ## Chat con GPT4 para resolver dudas.
 
-_Tengo que aplicarlo al teminar el Proyecto antes entregarlo_
+**Actualizado 19 Septiembre 2023**
 
-[Link Chat]()
+[Link Chat](https://chat.openai.com/share/5cf5fd22-a1b3-4e8a-a0c2-05976250e232)
 
 ## Antigua Entrega
 
