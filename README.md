@@ -6,13 +6,13 @@ Si no esta logeado puede que no guarde el historico de sus interectividad.
 - [√] Template HTML.
 - [√] Css Responsivo.
 - [√] Manejo del DOM.
-- [] Promises y asincronía.
-- [] Peticiones Fech.
-- [] Librerias.
+- [√] Promises y asincronía.
+- [√] Peticiones Fech.
+- [√] Librerias.
 - [] Node modules.
-- [] LocalStore.
-- [] Ajax.
-- [] JSON.
+- [√] LocalStore.
+- [√] Ajax.
+- [√] JSON.
 - [√] Manejo de Objetos y Arrays.
 - [√] Funciones y Condicionales
 

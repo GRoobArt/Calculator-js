@@ -65,5 +65,48 @@ button {
         }
       }
     }
+
+    &.success {
+      margin-top: 1rem;
+      aspect-ratio: auto;
+      width: 100%;
+      background-color: $color-blue-600;
+      color: $color-white;
+
+      &:not(:disabled) {
+        &:hover {
+          background-color: $color-blue-800;
+        }
+
+        &:active,
+        &.select {
+          background-color: $color-gray-900;
+        }
+      }
+    }
+
+    &.link {
+      padding: 0;
+      aspect-ratio: auto;
+      background-color: transparent;
+      color: $color-blue-600;
+      display: inline-block;
+      min-width: fit-content;
+    }
+  }
+
+  &[type='submit'] {
+    &.loading {
+      .loading {
+        display: inline-block;
+        animation: loading 1s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
   }
 }

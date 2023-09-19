@@ -10,15 +10,14 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <!--*Styles-->
-    <link rel="stylesheet" href="./public/styles.css">
-
     <!-- *Icons-->
     <script rel="preconnect" src="https://kit.fontawesome.com/3a008ef3f0.js" crossorigin="anonymous"></script>
 
     <!--*Scripts-->
     <script rel="preconnect" type="module" src="./scripts/main.js"></script>
     <script rel="preconnect" type="module" src="./scripts/calculator.js"></script>
+    <script type="module" src="./scripts/user.js"></script>
+
 
     <!--*Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +26,11 @@
         rel="stylesheet">
 
     <!-- *Library-->
-    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+    <!--*Styles-->
+    <link rel="stylesheet" href="./public/styles.css">
 </head>
 
 <body class="theme-dark content-app">
@@ -38,6 +40,11 @@
                 <i class="fa-solid fa-calculator"></i>
                 Calculator
             </h1>
+            <div class="user-login hidden">
+                <p class="name">Name</p>
+                <button class="action-button link xs logout-content">
+                    <i class="fa-solid fa-sign-out"></i>
+            </div>
             <button class="action-button secondary xs login-content">
                 <i class="fa-solid fa-user"></i>
             </button>
@@ -59,7 +66,7 @@
                 </ul>
             </section>
             <section class="forms-operation">
-                <article class="forms-calculators">
+                <article class="forms-calculators active">
                     <button type="button" class="action-button primary all-clear" value="ac">Ac</button>
                     <button type="button" class="action-button primary clear" value="c">c</button>
                     <button type="button" class="action-button primary operation" value="porcent">%</button>
@@ -79,6 +86,19 @@
                     <button type="button" class="action-button primary number" value="0">0</button>
                     <button type="button" class="action-button primary number" value=".">.</button>
                     <button type="submit" class="action-button primary equal">=</button>
+                </article>
+                <article class="forms-login hidden">
+                    <form class="form-login" autocomplete="off">
+                        <fieldset>
+                            <input type="text" name="firsname" placeholder="Nombre *" required>
+                            <input type="text" name="lastname" placeholder="Apellido *" required>
+                        </fieldset>
+                        <input type="email" name="email" placeholder="Email *" required>
+                        <input type="password" name="password" placeholder="Contraseña *" required>
+                        <button type="submit" class="action-button success fill ">
+                            <i class="fa-solid fa-spinner loading"></i> Ingresar
+                        </button>
+                    </form>
                 </article>
             </section>
             <section class="action-changet">

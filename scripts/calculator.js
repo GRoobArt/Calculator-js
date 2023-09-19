@@ -1,19 +1,14 @@
 import Calculator from './model/contructor.calculator.js'
-import Historial from './model/constructor.historial.js'
-
-// Hacer que el content se mantenga abajo GPT4
-
-const historieContainer = document.querySelector('.history.code')
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  historieContainer.scrollTop = historieContainer.scrollHeight
-})
+import dataSession from './main.js'
 
 //-------------------------------------------------------------
 
+const historieContainer = document.querySelector('.history.code')
+
 // Todo: Instanciamos la calculadora, historial y User
 let calculator = new Calculator()
-const historial = new Historial()
+const historial = dataSession
+const user = dataSession.user
 
 //-------------------------------------------------------------
 
@@ -132,14 +127,18 @@ buttonClear.addEventListener('click', (event) => {
   }
 })
 
+const newItem = historieContainer.querySelector('.item.new')
 // Todo: Aplicamos el Historial al DOM
 function getHistorial(response) {
+  newItem.insertAdjacentHTML(
+    'beforebegin',
+    historial.history.getTemplates(response)
+  )
+
   historial.postHistorial(response)
-  const newItem = historieContainer.querySelector('.item.new')
-  newItem.insertAdjacentHTML('beforebegin', historial.getTemplates(response))
   historieContainer.scrollTop = historieContainer.scrollHeight
 
-  // console.log(historial.historial)
+  // console.log(dataSession)
 }
 
 // Todo: Totamos los Botones de Equal
@@ -150,9 +149,8 @@ buttonEqual.addEventListener('click', (event) => {
     igualTo.innerHTML = '='
     result.innerHTML = calculator.getResult()
     // Aplicamos el resultado al historial.
-    getHistorial(calculator)
-
     // console.log(calculator)
+    getHistorial(calculator)
 
     // Reiniciamos los valores de la calculadora
     calculator = new Calculator(calculator)
@@ -162,3 +160,19 @@ buttonEqual.addEventListener('click', (event) => {
     resetTemplate(calculator)
   }
 })
+
+if (user.token !== '') {
+  // Hacer que el content se mantenga abajo GPT4
+  document.addEventListener('DOMContentLoaded', (event) => {
+    historieContainer.scrollTop = historieContainer.scrollHeight
+  })
+
+  // console.log(historial)
+
+  historial.history.historial.forEach((item) => {
+    newItem.insertAdjacentHTML(
+      'beforebegin',
+      historial.history.getTemplates(item)
+    )
+  })
+}

@@ -86,4 +86,9 @@ export default class Calculator {
     this.operation = ''
     this.numTwo = 0
   }
+
+  clear() {
+    if (this.numTwo === '') {
+    }
+  }
 }

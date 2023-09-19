@@ -1,7 +1,7 @@
 .dashboard {
   border: 2px solid $color-gray-200;
   border-radius: 1.2rem;
-  max-width: 1024px;
+  max-width: 800px;
   width: 100%;
   height: fit-content;
   background-color: $color-background-900;
@@ -12,6 +12,20 @@
     align-items: center;
     .title {
       margin: 0;
+    }
+
+    .user-login {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      gap: 0.5rem;
+
+      .name {
+        font-size: 0.75rem;
+        margin: 0;
+        text-align: right;
+        text-transform: capitalize;
+      }
     }
   }
   .main-content {
@@ -42,6 +56,11 @@
     .forms-operation {
       flex: 1 1 35%;
       padding: 1rem;
+
+      .forms-calculators,
+      .forms-login {
+        min-width: 300px;
+      }
     }
     .action-changet {
       flex: 1 1 5%;
@@ -54,8 +73,15 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .dashboard {
+    max-width: 365px;
+    .header-content {
+      .title {
+        font-size: 1rem;
+      }
+    }
+
     .main-content {
       flex-direction: column;
 
@@ -64,7 +90,7 @@
         border-bottom: 1px solid $color-gray-200;
 
         .history.code {
-          max-height: 100px;
+          max-height: 75px;
           min-height: 50px;
         }
       }
