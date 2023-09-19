@@ -20,7 +20,7 @@ Si no esta logeado puede que no guarde el historico de sus interectividad.
 
 **Actualizado 19 Septiembre 2023**
 
-[Link Chat](https://chat.openai.com/share/5cf5fd22-a1b3-4e8a-a0c2-05976250e232)
+[Link Chat](https://chat.openai.com/share/88bef630-7009-440b-a637-b0e554705f65)
 
 ## Antigua Entrega
 
