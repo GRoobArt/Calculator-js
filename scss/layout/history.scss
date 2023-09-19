@@ -8,6 +8,8 @@
     align-self: flex-end;
     text-align: right;
     list-style: none;
+    display: flex;
+    flex-direction: column;
     .item {
       margin: 0;
       padding: 0.5rem 0;
@@ -18,7 +20,8 @@
       &.old {
         flex-direction: row;
         gap: 0.5rem;
-        justify-content: center;
+        font-size: 0.75rem;
+        justify-content: end;
         align-items: center;
       }
 

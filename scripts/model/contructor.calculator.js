@@ -3,12 +3,18 @@ export default class Calculator {
     type = 'calc',
     numOne = '',
     operation = '',
+    signo = '',
     numTwo = '',
+    result = '',
+    state = 'new',
   } = {}) {
     this.type = type
-    this.numOne = Number(numOne) || ''
-    this.operation = operation || ''
-    this.numTwo = Number(numTwo) || ''
+    this.numOne = result || ''
+    this.operation = ''
+    this.signo = ''
+    this.numTwo = ''
+    this.result = ''
+    this.state = state || 'new'
   }
 
   putNumOne(num) {
@@ -17,6 +23,16 @@ export default class Calculator {
 
   putOperation(operation) {
     this.operation = operation
+    this.signo =
+      operation === 'add'
+        ? '+'
+        : operation === 'subtract'
+        ? '-'
+        : operation === 'multiply'
+        ? 'x'
+        : operation === 'divide'
+        ? '/'
+        : ''
   }
 
   putNumTwo(num) {
@@ -31,25 +47,41 @@ export default class Calculator {
     switch (operation) {
       case 'add':
         result = numOne + numTwo
+        this.result = String(parseFloat(result.toFixed(4)))
+        this.state = 'old'
         return parseFloat(result.toFixed(4))
         break
       case 'subtract':
         result = numOne - numTwo
-
+        this.result = parseFloat(result.toFixed(4))
+        this.state = 'old'
         return parseFloat(result.toFixed(4))
         break
       case 'multiply':
         result = numOne * numTwo
+        this.result = parseFloat(result.toFixed(4))
+        this.state = 'old'
         return parseFloat(result.toFixed(4))
         break
       case 'divide':
         result = numOne / numTwo
+        this.result = parseFloat(result.toFixed(4))
+        this.state = 'old'
         return parseFloat(result.toFixed(4))
         break
     }
   }
 
-  clear() {
+  postFollowing() {
+    this.numOne = this.result
+    this.operation = ''
+    this.numTwo = ''
+    this.state = 'new'
+    this.signo = ''
+    this.result = ''
+  }
+
+  allClear() {
     this.numOne = 0
     this.operation = ''
     this.numTwo = 0

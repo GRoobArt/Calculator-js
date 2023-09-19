@@ -27,6 +27,13 @@
       padding: 1rem;
       border-right: 1px solid $color-gray-200;
 
+      .history.code {
+        max-height: 300px;
+        min-height: 50px;
+        overflow-y: scroll;
+        padding-right: 0.75rem;
+      }
+
       .title {
         margin: 0;
         padding-bottom: 1rem;
@@ -59,8 +66,6 @@
         .history.code {
           max-height: 100px;
           min-height: 50px;
-          overflow-y: scroll;
-          padding-right: 0.75rem;
         }
       }
 

@@ -3,9 +3,9 @@
 Desarrollo de una app donde se pueda logear para guardar el historico de sus calculos.
 Si no esta logeado puede que no guarde el historico de sus interectividad.
 
-- [] Template HTML.
-- [] Css Responsivo.
-- [] Manejo del DOM.
+- [√] Template HTML.
+- [√] Css Responsivo.
+- [√] Manejo del DOM.
 - [] Promises y asincronía.
 - [] Peticiones Fech.
 - [] Librerias.
@@ -13,8 +13,8 @@ Si no esta logeado puede que no guarde el historico de sus interectividad.
 - [] LocalStore.
 - [] Ajax.
 - [] JSON.
-- [] Manejo de Objetos y Arrays.
-- [] Funciones y Condicionales
+- [√] Manejo de Objetos y Arrays.
+- [√] Funciones y Condicionales
 
 ## Chat con GPT4 para resolver dudas.
 
